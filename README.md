@@ -28,7 +28,26 @@ These modems typically expose:
 
 ## How To Use
 
-You can use this as a Chrome extension or extract the logic as a standalone script (browser or Node.js). Basic usage:
+This tool is packaged as a Chrome extension that listens for a keyboard shortcut:
+
+### 🔤 Trigger: Type `pp`
+Anywhere on a webpage, simply type the letters `pp` quickly. This will:
+
+1. Trigger the extension's background script
+2. Automatically log into the modem at `http://192.168.100.1`
+3. Retrieve a session token
+4. Send a request to change the APN with a new randomly generated 5-letter string
+
+### 💻 Setup Steps:
+1. Clone or download this repo
+2. Open `chrome://extensions` in your browser
+3. Enable **Developer Mode**
+4. Click **“Load unpacked”** and select the project folder
+5. Go to any webpage and type `pp` — it will send the update to the modem instantly
+
+---
+
+Let me know if you want to support additional shortcuts, show a success popup, or make the APN configurable via popup or settings page.
 
 ```js
 // This function logs in and sets a new APN with a random 5-letter name
